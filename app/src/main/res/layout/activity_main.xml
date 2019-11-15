@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".PersonalInfoActivity">
 
     <ImageView
+        android:id="@+id/profilna"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_gravity="center"
         android:src="@drawable/profile_picture"
         android:contentDescription="profilna slika"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
-
         <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="180dp"
-            android:layout_height="wrap_content" >
+            android:id="@+id/tiIme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/profilna"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tiPrezime"
+            android:layout_marginLeft="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etIme"
@@ -40,8 +39,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="180dp"
-            android:layout_height="wrap_content" >
+            android:id="@+id/tiPrezime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/profilna"
+            app:layout_constraintStart_toEndOf="@+id/tiIme"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPrezime"
@@ -54,44 +58,52 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
-
     <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimaryDark"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp">
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@+id/tiIme"/>
 
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="Datum rođenja:" />
-        <EditText
-            android:id="@+id/etDatumRodenja"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvDatumRod"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Datum rođenja: "
+        app:layout_constraintTop_toTopOf="@+id/etDatumRodenja"
+        app:layout_constraintBottom_toBottomOf="@+id/etDatumRodenja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etDatumRodenja"/>
+
+    <EditText
+        android:id="@+id/etDatumRodenja"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toEndOf="@+id/tvDatumRod"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/colorPrimaryDark"/>
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@+id/etDatumRodenja"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
         android:text="Dalje" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
