@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".StudentInfoActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profilna"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/profile_picture"
+        android:contentDescription="profilna slika"
+        />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="250dp"
+        android:id="@+id/tiPredmet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/profilna"
+        android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPredmet"
@@ -21,13 +35,114 @@
 
         </com.google.android.material.textfield.TextInputEditText>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="U redu" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tvProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tiPredmet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etProfesor"
+        app:layout_constraintBottom_toBottomOf="@id/etProfesor"
+        android:text="Profesor: "
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etProfesor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tiPredmet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvProfesor"
+        />
+
+    <TextView
+        android:id="@+id/tvGodina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etProfesor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etGodina"
+        app:layout_constraintBottom_toBottomOf="@id/etGodina"
+        android:text="Akademska godina: "
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etGodina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etProfesor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvGodina"
+        />
+
+    <TextView
+        android:id="@+id/tvBrojPredavanja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etGodina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etBrojPredavanja"
+        app:layout_constraintBottom_toBottomOf="@id/etBrojPredavanja"
+        android:text="Broj sati predavanja: "
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etBrojPredavanja"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etGodina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvBrojPredavanja"
+        />
+
+    <TextView
+        android:id="@+id/tvBrojLV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etBrojPredavanja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etBrojLV"
+        app:layout_constraintBottom_toBottomOf="@id/etBrojLV"
+        android:text="Broj sati LV: "
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/etBrojLV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etBrojPredavanja"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvBrojLV"
+        android:text=""
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Dalje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

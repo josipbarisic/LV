@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -23,16 +24,23 @@ public class PersonalInfoActivity extends AppCompatActivity {
         oBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextInputEditText etImePrezime = (TextInputEditText)findViewById(R.id.etIme);
-                String sImePrezime = etImePrezime.getText().toString();
+                TextInputEditText etIme = (TextInputEditText)findViewById(R.id.etIme);
+                TextInputEditText etPrezime = (TextInputEditText)findViewById(R.id.etPrezime);
+                EditText etDatumRodenja = (EditText) findViewById(R.id.etDatumRodenja);
 
-                if(!sImePrezime.matches("")){
+                String sIme = etIme.getText().toString();
+                String sPrezime = etPrezime.getText().toString();
+                String sDatumRodenja = etDatumRodenja.getText().toString();
+
+                if(!sIme.matches("") && !sPrezime.matches("")){
                     Intent student = new Intent(PersonalInfoActivity.this, StudentInfoActivity.class);
-                    student.putExtra("imeStudenta", sImePrezime);
+                    student.putExtra("imeStudenta", sIme);
+                    student.putExtra("prezimeStudenta", sPrezime);
+                    student.putExtra("datumRodenja", sDatumRodenja);
                     startActivity(student);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "Morate upisati ime!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Morate upisati ime i prezime!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
