@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Laboratorijske vjezbe</string>
+    <string name="app_name">Mobilna aplikacija</string>
+<!-- personal_info -->
+    <string name="ime">Ime</string>
+    <string name="prezime">Prezime</string>
+    <string name="datum_rodenja">Datum rođenja:</string>
+    <string name="buttonDalje">Dalje</string>
+
+<!-- student_info -->
+    <string name="unos_predmeta">Unesite predmet</string>
+    <string name="profesor">Profesor: </string>
+    <string name="ak_god">Akademska godina: </string>
+    <string name="br_predavanja">Broj sati predavanja: </string>
+    <string name="br_lv">Broj sati LV: </string>
+<!-- summary_info -->
+    <string name="buttonPocetna">Početna</string>
+
+    <string-array name="lang">
+        <item>Hrvatski (hr)</item>
+        <item>English (en)</item>
+        <item>Magyar (hu)</item>
+    </string-array>
 </resources>

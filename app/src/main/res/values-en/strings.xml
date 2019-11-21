@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobile Application</string>
+    <!-- personal_info -->
+    <string name="ime">First Name</string>
+    <string name="prezime">Last Name</string>
+    <string name="datum_rodenja">Birth date:</string>
+    <string name="buttonDalje">Next</string>
+
+    <!-- student_info -->
+    <string name="unos_predmeta">Enter subject</string>
+    <string name="profesor">Professor: </string>
+    <string name="ak_god">Academic year: </string>
+    <string name="br_predavanja">Hours of lectures: </string>
+    <string name="br_lv">Hours of practice: </string>
+    <!-- summary_info -->
+    <string name="buttonPocetna">Homepage</string>
+</resources>

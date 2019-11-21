@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobil alkalmazás</string>
+    <!-- personal_info -->
+    <string name="ime">Név</string>
+    <string name="prezime">Vezetéknév</string>
+    <string name="datum_rodenja">Születési idő:</string>
+    <string name="buttonDalje">Következő</string>
+
+    <!-- student_info -->
+    <string name="unos_predmeta">Írja be a tárgyat</string>
+    <string name="profesor">Egyetemi tanár: </string>
+    <string name="ak_god">Tanév: </string>
+    <string name="br_predavanja">: </string>
+    <string name="br_lv">Hours of practice: </string>
+    <!-- summary_info -->
+    <string name="buttonPocetna">Homepage</string>
+</resources>

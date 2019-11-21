@@ -15,7 +15,6 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="16dp"
         android:src="@drawable/profile_picture"
-        android:contentDescription="profilna slika"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -31,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="13"
-            android:hint="Unesite naziv predmeta">
+            android:hint="@string/unos_predmeta">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -47,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etProfesor"
         app:layout_constraintBottom_toBottomOf="@id/etProfesor"
-        android:text="Profesor: "
+        android:text="@string/profesor"
         android:textSize="20dp"/>
 
     <EditText
@@ -71,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etGodina"
         app:layout_constraintBottom_toBottomOf="@id/etGodina"
-        android:text="Akademska godina: "
+        android:text="@string/ak_god"
         android:textSize="20dp"/>
 
     <EditText
@@ -95,7 +94,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etBrojPredavanja"
         app:layout_constraintBottom_toBottomOf="@id/etBrojPredavanja"
-        android:text="Broj sati predavanja: "
+        android:text="@string/br_predavanja"
         android:textSize="20dp"/>
 
     <EditText
@@ -119,7 +118,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etBrojLV"
         app:layout_constraintBottom_toBottomOf="@id/etBrojLV"
-        android:text="Broj sati LV: "
+        android:text="@string/br_lv"
         android:textSize="20dp"/>
 
     <EditText
@@ -139,7 +138,7 @@
         android:layout_gravity="center"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Dalje"
+        android:text="@string/buttonDalje"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
