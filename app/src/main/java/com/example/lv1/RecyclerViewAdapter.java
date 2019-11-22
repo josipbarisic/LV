@@ -1,62 +1,59 @@
 package com.example.lv1;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-    private ArrayList<String> student = new ArrayList<>();
-    private ArrayList<String> predmet = new ArrayList<>();
-    private Context mContext;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    List<Student> dataList;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<String> student, ArrayList<String> predmet) {
-        this.mContext = mContext;
-        this.student = student;
-        this.predmet = predmet;
+    public RecyclerViewAdapter(List<Student> myDataset) {
+        dataList = myDataset;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        studentViewHolder holder = new studentViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvImePrezime.setText(student.get(position));
-        holder.tvImePredmeta.setText(predmet.get(position));
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        studentViewHolder myVH = (studentViewHolder)holder;
+        myVH.tvImePrezime.setText(dataList.get(position).sIme + " " + dataList.get(position).sPrezime);
+        myVH.tvPredmet.setText(dataList.get(position).sPredmet);
     }
 
     @Override
     public int getItemCount() {
-        return student.size();
+
+        return dataList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    public class studentViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvImePrezime;
-        TextView tvImePredmeta;
-        ConstraintLayout parentLayout;
+        TextView tvPredmet;
 
-        public ViewHolder(@NonNull View itemView) {
+        public studentViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvImePrezime = itemView.findViewById(R.id.tvImePrezime);
-            tvImePredmeta = itemView.findViewById(R.id.tvImePredmeta);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
-
-
+            tvPredmet = itemView.findViewById(R.id.tvImePredmeta);
         }
     }
 }

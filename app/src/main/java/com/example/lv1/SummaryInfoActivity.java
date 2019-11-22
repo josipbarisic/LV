@@ -55,12 +55,9 @@ public class SummaryInfoActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor edit = pref.edit();
-        edit.putString("imeStudenta", sIme + " " + sPrezime);
-        edit.putString("predmet", sPredmet);
-        edit.commit();
+        CustomDataStorage students = CustomDataStorage.getInstance();
+        Student student = new Student(sIme, sPrezime, sPredmet);
+        students.setStudents(student);
 
     }
 }

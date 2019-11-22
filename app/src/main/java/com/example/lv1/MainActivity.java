@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Button btn = (Button)findViewById(R.id.button);
-        final TextView tvStudenti = (TextView)findViewById(R.id.tvStudenti);
 
         ActionBar ab = getSupportActionBar();
         ab.setTitle(getResources().getString(R.string.app_name));
+
+        initRecyclerView();
 
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.lang, android.R.layout.simple_spinner_item);
@@ -56,14 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
                 setLocale(locale);
 
-//                loadLocale();
-
                 ActionBar ab = getSupportActionBar();
                 ab.setTitle(getResources().getString(R.string.app_name));
 
                 btn.setText(getResources().getString(R.string.buttonDalje));
-
-                tvStudenti.setText(R.string.studenti);
             }
 
             @Override
@@ -81,20 +79,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initList(){
-        SharedPreferences pref =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        String student = pref.getString("imeStudenta", "n/a");
-        String predmet = pref.getString("predmet", "n/a");
-        studentiArray.add(student);
-        predmetiArray.add(predmet);
-
-        initRecyclerView();
-    }
-
     private void initRecyclerView(){
+        CustomDataStorage students = CustomDataStorage.getInstance();
+        List<Student> list =  students.getStudents();
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, studentiArray, predmetiArray);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -107,16 +97,5 @@ public class MainActivity extends AppCompatActivity {
         config.locale = locale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
-        /*SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("My_Lang", lang);
-        editor.apply();*/
     }
-
-    /*public void loadLocale (){
-        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = prefs.getString("My_Lang", "");
-
-        setLocale(language);
-    }*/
-
 }
