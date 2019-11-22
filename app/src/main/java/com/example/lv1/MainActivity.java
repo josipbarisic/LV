@@ -7,19 +7,28 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ArrayList<String> studentiArray = new ArrayList<>();
+    private ArrayList<String> predmetiArray = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Button btn = (Button)findViewById(R.id.button);
+        final TextView tvStudenti = (TextView)findViewById(R.id.tvStudenti);
 
         ActionBar ab = getSupportActionBar();
         ab.setTitle(getResources().getString(R.string.app_name));
@@ -52,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 ab.setTitle(getResources().getString(R.string.app_name));
 
                 btn.setText(getResources().getString(R.string.buttonDalje));
+
+                tvStudenti.setText(R.string.studenti);
             }
 
             @Override
@@ -67,6 +79,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(person);
             }
         });
+    }
+
+    private void initList(){
+        SharedPreferences pref =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        String student = pref.getString("imeStudenta", "n/a");
+        String predmet = pref.getString("predmet", "n/a");
+        studentiArray.add(student);
+        predmetiArray.add(predmet);
+
+        initRecyclerView();
+    }
+
+    private void initRecyclerView(){
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, studentiArray, predmetiArray);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setLocale(String lang){

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mobil alkalmazás</string>
+    <!-- activity_main -->
+    <string name="studenti">Diákok</string>
     <!-- personal_info -->
     <string name="ime">Név</string>
     <string name="prezime">Vezetéknév</string>
@@ -11,8 +13,8 @@
     <string name="unos_predmeta">Írja be a tárgyat</string>
     <string name="profesor">Egyetemi tanár: </string>
     <string name="ak_god">Tanév: </string>
-    <string name="br_predavanja">: </string>
-    <string name="br_lv">Hours of practice: </string>
+    <string name="br_predavanja">Előadások száma: </string>
+    <string name="br_lv">Gyakorlatok száma: </string>
     <!-- summary_info -->
-    <string name="buttonPocetna">Homepage</string>
+    <string name="buttonPocetna">Otthoni webhely</string>
 </resources>

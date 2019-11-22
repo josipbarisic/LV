@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Mobilna aplikacija</string>
+<!-- activity_main -->
+    <string name="studenti">Studenti</string>
 <!-- personal_info -->
     <string name="ime">Ime</string>
     <string name="prezime">Prezime</string>

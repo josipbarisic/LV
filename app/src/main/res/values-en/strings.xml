@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mobile Application</string>
+    <!-- activity_main -->
+    <string name="studenti">Students</string>
     <!-- personal_info -->
     <string name="ime">First Name</string>
     <string name="prezime">Last Name</string>
