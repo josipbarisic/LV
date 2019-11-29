@@ -6,11 +6,11 @@ import java.util.List;
 public class CustomDataStorage {
     private List<Student> students;
     private CustomDataStorage(){;
-        Student st = new Student("Ivan", "Ivic", "PMA");
-        Student st2 = new Student("Ivan", "Ivic", "PMA");
+        /*Student st = new Student("Ivan", "Ivic", "PMA");
+        Student st2 = new Student("Ivan", "Ivic", "PMA");*/
         students  = new ArrayList<>();
-        students.add(st);
-        students.add(st2);
+        /*students.add(st);
+        students.add(st2);*/
     }
     static private CustomDataStorage instance;
     static CustomDataStorage getInstance(){

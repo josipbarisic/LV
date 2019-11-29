@@ -12,8 +12,10 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     List<Student> dataList;
+    //String title = "Studenti";
 
     public RecyclerViewAdapter(List<Student> myDataset) {
+        //dataList.add(title);
         dataList = myDataset;
     }
 
@@ -41,6 +43,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemViewType(int position) {
+        /*if(dataList.get(position) instanceof Student){
+            return super.getItemViewType(position);
+        }*/
         return super.getItemViewType(position);
     }
 
@@ -56,4 +61,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             tvPredmet = itemView.findViewById(R.id.tvImePredmeta);
         }
     }
+
+    /*public class TitleViewHolder extends RecyclerView.ViewHolder{
+
+        TextView tvTitle;
+
+        public TitleViewHolder(View item){
+            super(item);
+
+            tvTitle =
+        }
+    }*/
 }
