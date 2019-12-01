@@ -7,13 +7,22 @@
     android:id="@+id/parent_layout">
 
     <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
         android:id="@+id/tvImePrezime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvImePredmeta"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        style="@style/TextViewStyle"/>
 
     <TextView
         android:id="@+id/tvImePredmeta"
@@ -22,6 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvImePrezime"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        style="@style/TextViewStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

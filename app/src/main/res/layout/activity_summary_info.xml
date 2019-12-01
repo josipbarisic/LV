@@ -96,6 +96,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
-        android:text="@string/buttonPocetna"/>
+        android:text="@string/buttonPocetna"
+        style="@style/ButtonStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

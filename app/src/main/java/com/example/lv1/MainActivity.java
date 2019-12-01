@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initRecyclerView(){
         CustomDataStorage students = CustomDataStorage.getInstance();
-        List<Student> list =  students.getStudents();
+        List<Object> list =  students.getStudents();
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(list);

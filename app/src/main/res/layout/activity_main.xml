@@ -33,7 +33,8 @@
         app:layout_constraintStart_toStartOf="@+id/profilna"
         app:layout_constraintEnd_toEndOf="@id/profilna"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
-        android:text="@string/buttonDalje" />
+        android:text="@string/buttonDalje"
+        style="@style/ButtonStyle"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

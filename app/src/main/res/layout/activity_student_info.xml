@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/profilna"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:theme="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPredmet"
@@ -59,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tiPredmet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvProfesor"
+        android:theme="@style/TextInputLayoutStyle"
         />
 
     <TextView
@@ -83,6 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etProfesor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvGodina"
+        android:theme="@style/TextInputLayoutStyle"
         />
 
     <TextView
@@ -107,6 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etGodina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvBrojPredavanja"
+        android:theme="@style/TextInputLayoutStyle"
         />
 
     <TextView
@@ -131,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etBrojPredavanja"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvBrojLV"
-        android:text=""
+        android:theme="@style/TextInputLayoutStyle"
         />
 
     <Button
@@ -143,6 +147,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginRight="16dp"
+        style="@style/ButtonStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
