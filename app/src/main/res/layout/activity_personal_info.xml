@@ -24,7 +24,8 @@
             app:layout_constraintTop_toBottomOf="@+id/profilna"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tiPrezime"
-            android:layout_marginLeft="16dp">
+            android:layout_marginLeft="16dp"
+            android:theme="@style/TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etIme"
@@ -44,7 +45,8 @@
             app:layout_constraintTop_toBottomOf="@+id/profilna"
             app:layout_constraintStart_toEndOf="@+id/tiIme"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="16dp">
+            android:layout_marginRight="16dp"
+            android:theme="@style/TextInputLayoutStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPrezime"
@@ -75,7 +77,8 @@
         app:layout_constraintTop_toTopOf="@+id/etDatumRodenja"
         app:layout_constraintBottom_toBottomOf="@+id/etDatumRodenja"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etDatumRodenja"/>
+        app:layout_constraintEnd_toStartOf="@+id/etDatumRodenja"
+        style="@style/TextViewStyle"/>
 
     <EditText
         android:id="@+id/etDatumRodenja"
@@ -85,7 +88,8 @@
         android:layout_marginRight="16dp"
         app:layout_constraintTop_toBottomOf="@+id/view1"
         app:layout_constraintStart_toEndOf="@+id/tvDatumRod"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/TextInputLayoutStyle"/>
 
 
     <View
@@ -103,6 +107,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/buttonDalje" />
+        android:text="@string/buttonDalje"
+        style="@style/ButtonStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
