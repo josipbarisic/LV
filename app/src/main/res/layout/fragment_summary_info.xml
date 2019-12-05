@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SummaryInfoActivity">
+    tools:context=".SummaryInfoActivity"
+    android:id="@+id/summary_fragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/profilna"
@@ -96,6 +97,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="16dp"
-        android:text="@string/buttonPocetna"/>
+        android:text="@string/buttonPocetna"
+        style="@style/ButtonStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent person = new Intent(MainActivity.this, PersonalInfoActivity.class);
+                Intent person = new Intent(MainActivity.this, CreateNewRecordActivity.class);
                 startActivity(person);
             }
         });

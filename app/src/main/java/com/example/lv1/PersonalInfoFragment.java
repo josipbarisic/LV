@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class PersonalInfoFragment extends Fragment {
@@ -21,11 +23,11 @@ public class PersonalInfoFragment extends Fragment {
     TextInputEditText etIme;
     String sIme;
     String sPrezime;
+    String sDatum;
     private PersonalInfoInterface listener;
 
     public interface PersonalInfoInterface {
-        void onImeInput(String ime);
-        void onPrezimeInput(String prezime);
+        void onPersonalInfoInput(String ime, String prezime, String datum);
     }
 
     @Override
@@ -35,56 +37,48 @@ public class PersonalInfoFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
 
-        etIme = (TextInputEditText)view.findViewById(R.id.etIme);
-        etPrezime = (TextInputEditText)view.findViewById(R.id.etPrezime);
-        etDatumRodenja = (EditText)view.findViewById(R.id.etDatumRodenja);
-
-        //text watcher
-        etIme.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Toast.makeText(getContext(), etIme.getText().toString(), Toast.LENGTH_SHORT).show();
-                sIme = etIme.getText().toString();
-
-                listener.onImeInput(sIme);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        etPrezime.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Toast.makeText(getContext(), etPrezime.getText().toString(), Toast.LENGTH_SHORT).show();
-                sPrezime = etPrezime.getText().toString();
-
-                listener.onPrezimeInput(sPrezime);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
         return view;
     }
 
     @Override
-    public void onAttach(Context context){
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        etIme = view.findViewById(R.id.etIme);
+        etPrezime = view.findViewById(R.id.etPrezime);
+        etDatumRodenja = view.findViewById(R.id.etDatumRodenja);
+
+        etIme.addTextChangedListener(textWatcher);
+        etPrezime.addTextChangedListener(textWatcher);
+        etDatumRodenja.addTextChangedListener(textWatcher);
+    }
+    //text watcher
+
+    public TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+//            Toast.makeText(getContext(), etIme.getText().toString(), Toast.LENGTH_SHORT).show();
+            sIme = etIme.getText().toString();
+            sPrezime = etPrezime.getText().toString();
+            sDatum = etDatumRodenja.getText().toString();
+
+            listener.onPersonalInfoInput(sIme, sPrezime, sDatum);
+        }
+    };
+
+
+    @Override
+    public void onAttach(@NonNull Context context){
         super.onAttach(context);
         if (context instanceof PersonalInfoInterface) {
             listener = (PersonalInfoInterface) context;

@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomDataStorage {
-    private List<Student> students;
-    private CustomDataStorage(){;
-        /*Student st = new Student("Ivan", "Ivic", "PMA");
-        Student st2 = new Student("Ivan", "Ivic", "PMA");*/
+    private List<Object> students;
+    private CustomDataStorage(){
         students  = new ArrayList<>();
-        /*students.add(st);
-        students.add(st2);*/
+        students.add("STUDENTI");
     }
     static private CustomDataStorage instance;
     static CustomDataStorage getInstance(){
@@ -21,7 +18,7 @@ public class CustomDataStorage {
         return instance;
     }
 
-    public List<Student> getStudents(){
+    public List<Object> getStudents(){
         return students;
     }
     public void setStudents(Student newStudent){

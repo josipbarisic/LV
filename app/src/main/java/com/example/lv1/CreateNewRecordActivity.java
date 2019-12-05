@@ -5,29 +5,40 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-public class CreateNewRecordActivity extends AppCompatActivity implements PersonalInfoFragment.PersonalInfoInterface {
-    private SummaryInfoFragment summary;
+public class CreateNewRecordActivity extends AppCompatActivity implements PersonalInfoFragment.PersonalInfoInterface, StudentInfoFragment.StudentInfoInterface {
+
+    public static ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_record);
 
-        ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
-        viewPager.setAdapter(new ViewPagerAdapter(this.getSupportFragmentManager()));
+        viewPager = findViewById(R.id.viewpager);
+        //load all fragments
+        viewPager.setOffscreenPageLimit(2);
 
-        summary = new SummaryInfoFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.viewpager, summary).commit();
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
 
         //DODATI INTERFACE-E ZA SVAKI FRAGMENT (SPREMANJE PODATAKA)
 
     }
 
 
-    public void onImeInput(String ime){
-        summary.onImeInput(ime);
+    @Override
+    public void onPersonalInfoInput(String ime, String prezime, String datum) {
+        String tag = "android:switcher:" + R.id.viewpager + ":" + 2;
+        SummaryInfoFragment fragment = (SummaryInfoFragment) getSupportFragmentManager().findFragmentByTag(tag);
+        fragment.updatePersonalInfo(ime, prezime, datum);
+//        Toast.makeText(getApplicationContext(), tag, Toast.LENGTH_SHORT).show();
     }
-    public void onPrezimeInput(String prezime){
-        summary.onPrezimeInput(prezime);
+
+    @Override
+    public void onStudentInput(String predmet, String profesor, String godina, String br_pred, String br_lab) {
+        String tag = "android:switcher:" + R.id.viewpager + ":" + 2;
+        SummaryInfoFragment fragment = (SummaryInfoFragment) getSupportFragmentManager().findFragmentByTag(tag);
+        fragment.updateStudentInfo(predmet, profesor, godina, br_pred, br_lab);
+//        Toast.makeText(getApplicationContext(), tag, Toast.LENGTH_SHORT).show();
     }
 }
