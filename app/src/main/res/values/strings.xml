@@ -16,6 +16,7 @@
     <string name="br_lv">Broj sati LV: </string>
 <!-- summary_info -->
     <string name="buttonPocetna">Početna</string>
+    <string name="warning">Ime, prezime i predmet su obavezni!</string>
 
     <string-array name="lang">
         <item>Hrvatski (hr)</item>

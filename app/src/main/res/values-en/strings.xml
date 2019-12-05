@@ -17,4 +17,5 @@
     <string name="br_lv">Hours of practice: </string>
     <!-- summary_info -->
     <string name="buttonPocetna">Homepage</string>
+    <string name="warning">First name, last name and subject are required!</string>
 </resources>

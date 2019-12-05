@@ -17,4 +17,5 @@
     <string name="br_lv">Gyakorlatok száma: </string>
     <!-- summary_info -->
     <string name="buttonPocetna">Otthoni webhely</string>
+    <string name="warning">Név, vezetéknév és tárgy szükséges!</string>
 </resources>

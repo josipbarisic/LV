@@ -55,7 +55,7 @@ public class SummaryInfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(sIme == null || sPrezime == null || sPredmet == null) {
-                    Toast.makeText(getContext(), "Ime, prezime i predmet su obavezni!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), R.string.warning, Toast.LENGTH_LONG).show();
                 }
                 else{
                     Intent intent = new Intent(getActivity(), MainActivity.class);
