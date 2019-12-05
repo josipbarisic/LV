@@ -16,6 +16,7 @@ public class SummaryInfoFragment extends Fragment {
     TextView tvGodina;
     TextView tvBrojPredavanja;
     TextView tvBrojLV;
+    String sImePrezime;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,5 +34,15 @@ public class SummaryInfoFragment extends Fragment {
         tvBrojLV = (TextView)view.findViewById(R.id.tvBrojLV);
 
         return view;
+    }
+
+    public void onImeInput(String ime){
+        sImePrezime = ime;
+        tvIme.setText(sImePrezime);
+    }
+    public void onPrezimeInput(String prezime){
+        sImePrezime += prezime;
+        tvIme.setText(sImePrezime);
+
     }
 }

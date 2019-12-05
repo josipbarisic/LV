@@ -14,8 +14,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="16dp"
-        android:src="@drawable/profile_picture"
-        android:contentDescription="profilna slika" />
+        android:src="@drawable/profile_picture"/>
 
     <Spinner
         android:id="@+id/spinner"
