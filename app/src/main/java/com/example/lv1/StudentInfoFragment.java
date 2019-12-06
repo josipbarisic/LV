@@ -4,17 +4,26 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.example.lv1.ApiClasses.CourseResponse;
 import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class StudentInfoFragment extends Fragment {
+public class StudentInfoFragment extends Fragment implements Callback<CourseResponse> {
+
+    //API
+    CourseResponse courses = new CourseResponse();
+
     TextInputEditText etPredmet;
     EditText etProfesor;
     EditText etGodina;
@@ -52,6 +61,9 @@ public class StudentInfoFragment extends Fragment {
         etBrojPredavanja.addTextChangedListener(textWatcher);
         etBrojLV.addTextChangedListener(textWatcher);
 
+        //API CALL
+        ApiManager.getInstance().service().getCourses().enqueue(this);
+
         return view;
     }
 
@@ -77,6 +89,24 @@ public class StudentInfoFragment extends Fragment {
             studentInfoListener.onStudentInput(sPredmet, sProfesor, sGodina, sBrojPredavanja, sBrojLabosa);
         }
     };
+
+    @Override
+    public void onResponse(Call<CourseResponse> call, Response<CourseResponse> response) {
+        if (response.isSuccessful() && response.body() != null){
+            courses = response.body();
+            printCoursesToConsole(courses);
+        }
+    }
+
+    @Override
+    public void onFailure(Call<CourseResponse> call, Throwable t) {
+        t.printStackTrace();
+    }
+
+    private void printCoursesToConsole(CourseResponse courses){
+        String TAG = "apicall";
+        Log.d(TAG, courses.toString());
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
