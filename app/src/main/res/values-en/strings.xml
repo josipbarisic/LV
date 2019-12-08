@@ -10,7 +10,7 @@
     <string name="buttonDalje">Next</string>
 
     <!-- student_info -->
-    <string name="unos_predmeta">Enter subject</string>
+    <string name="predmet">Subject:</string>
     <string name="profesor">Professor: </string>
     <string name="ak_god">Academic year: </string>
     <string name="br_predavanja">Hours of lectures: </string>

@@ -9,7 +9,7 @@
     <string name="buttonDalje">Dalje</string>
 
 <!-- student_info -->
-    <string name="unos_predmeta">Unesite predmet</string>
+    <string name="predmet">Predmet:</string>
     <string name="profesor">Profesor: </string>
     <string name="ak_god">Akademska godina: </string>
     <string name="br_predavanja">Broj sati predavanja: </string>

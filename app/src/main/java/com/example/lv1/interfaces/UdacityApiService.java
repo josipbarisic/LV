@@ -1,4 +1,4 @@
-package com.example.lv1;
+package com.example.lv1.interfaces;
 
 import com.example.lv1.ApiClasses.CourseResponse;
 import retrofit2.Call;

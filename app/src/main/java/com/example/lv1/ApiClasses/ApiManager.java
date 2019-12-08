@@ -1,4 +1,6 @@
-package com.example.lv1;
+package com.example.lv1.ApiClasses;
+
+import com.example.lv1.interfaces.UdacityApiService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

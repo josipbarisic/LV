@@ -8,10 +8,18 @@ public class Course {
     String title;
     ArrayList<Instructor> instructors;
 
+    public String getTitle(){
+        return title;
+    }
 
-    @NonNull
+    public ArrayList<Instructor> getInstructors(){
+        return instructors;
+    }
+
+
+    /*@NonNull
     @Override
     public String toString() {
         return title;
-    }
+    }*/
 }

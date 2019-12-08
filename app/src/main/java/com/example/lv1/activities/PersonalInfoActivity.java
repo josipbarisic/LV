@@ -1,4 +1,4 @@
-package com.example.lv1;
+package com.example.lv1.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.lv1.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class PersonalInfoActivity extends AppCompatActivity {

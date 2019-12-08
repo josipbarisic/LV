@@ -1,13 +1,9 @@
-package com.example.lv1;
+package com.example.lv1.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.lv1.R;
+import com.example.lv1.interfaces.PersonalInfoInterface;
 import com.google.android.material.textfield.TextInputEditText;
 import static android.app.Activity.RESULT_OK;
 import androidx.annotation.NonNull;
@@ -35,10 +33,6 @@ public class PersonalInfoFragment extends Fragment {
     String sDatum;
     ImageView image;
     private PersonalInfoInterface listener;
-
-    public interface PersonalInfoInterface {
-        void onPersonalInfoInput(String ime, String prezime, String datum);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

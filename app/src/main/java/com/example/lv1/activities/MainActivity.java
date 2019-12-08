@@ -1,11 +1,10 @@
-package com.example.lv1;
+package com.example.lv1.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,18 +13,20 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 
-import com.example.lv1.ApiClasses.CourseResponse;
+import com.example.lv1.CustomDataStorage;
+import com.example.lv1.R;
+import com.example.lv1.adapters.RecyclerViewAdapter;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import retrofit2.Call;
-import retrofit2.Response;
 
 import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+    String listTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setTitle(getResources().getString(R.string.app_name));
 
+        listTitle = getResources().getString(R.string.studenti);
+
         initRecyclerView();
 
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.lang, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                 ActionBar ab = getSupportActionBar();
                 ab.setTitle(getResources().getString(R.string.app_name));
+                listTitle = getResources().getString(R.string.studenti);
 
                 btn.setText(getResources().getString(R.string.buttonDalje));
             }

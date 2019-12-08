@@ -10,7 +10,7 @@
     <string name="buttonDalje">Következő</string>
 
     <!-- student_info -->
-    <string name="unos_predmeta">Írja be a tárgyat</string>
+    <string name="predmet">Alattvaló:</string>
     <string name="profesor">Egyetemi tanár: </string>
     <string name="ak_god">Tanév: </string>
     <string name="br_predavanja">Előadások száma: </string>

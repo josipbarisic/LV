@@ -1,14 +1,16 @@
-package com.example.lv1;
+package com.example.lv1.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.lv1.CustomDataStorage;
+import com.example.lv1.R;
+import com.example.lv1.Student;
 
 public class SummaryInfoActivity extends AppCompatActivity {
 

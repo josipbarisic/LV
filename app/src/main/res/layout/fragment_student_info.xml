@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentInfoActivity">
+    tools:context=".activities.StudentInfoActivity">
 
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -18,48 +18,60 @@
         android:src="@drawable/profile_picture"
         />
 
-    <Spinner
-        android:id="@+id/spinnerPredmet"
+    <TextView
+        android:id="@+id/tvImePredmeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/profilna"
-        app:layout_constraintStart_toEndOf="@+id/profilna"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:outlineSpotShadowColor="@color/colorBlack"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profilna"
+        android:text="@string/predmet"
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerPredmet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/profilna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvImePredmeta"
+        app:layout_constraintBottom_toTopOf="@+id/tvProfesor"/>
 
     <TextView
         android:id="@+id/tvProfesor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerPredmet"
+        app:layout_constraintTop_toBottomOf="@+id/tvImePredmeta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etProfesor"
-        app:layout_constraintBottom_toBottomOf="@id/etProfesor"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerProfesor"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerProfesor"
         android:text="@string/profesor"
         android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/etProfesor"
+    <Spinner
+        android:id="@+id/spinnerProfesor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerPredmet"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvImePredmeta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvProfesor"
-        android:theme="@style/TextInputLayoutStyle"
-        />
+        app:layout_constraintStart_toEndOf="@id/tvProfesor"/>
 
     <TextView
         android:id="@+id/tvGodina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/etProfesor"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerProfesor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/etGodina"
         app:layout_constraintBottom_toBottomOf="@id/etGodina"
@@ -70,9 +82,9 @@
         android:id="@+id/etGodina"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/etProfesor"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerProfesor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvGodina"
         android:theme="@style/TextInputLayoutStyle"

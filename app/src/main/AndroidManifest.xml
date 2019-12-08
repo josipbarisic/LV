@@ -18,17 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateNewRecordActivity"/>
-        <activity android:name=".PersonalInfoActivity"/>
-        <activity android:name=".StudentInfoActivity" />
-        <activity android:name=".SummaryInfoActivity" />
+        <activity android:name=".activities.CreateNewRecordActivity"/>
+        <activity android:name=".activities.PersonalInfoActivity"/>
+        <activity android:name=".activities.StudentInfoActivity" />
+        <activity android:name=".activities.SummaryInfoActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.lv1;
+package com.example.lv1.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.example.lv1.R;
+import com.example.lv1.Student;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     List<Object> dataList;
-    String title = "Studenti";
     private static final int HEADER = -1;
     private static final int LIST_ITEM = -2;
 

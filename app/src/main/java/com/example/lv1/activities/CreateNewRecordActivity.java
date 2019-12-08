@@ -1,11 +1,17 @@
-package com.example.lv1;
+package com.example.lv1.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-public class CreateNewRecordActivity extends AppCompatActivity implements PersonalInfoFragment.PersonalInfoInterface, StudentInfoFragment.StudentInfoInterface {
+import com.example.lv1.R;
+import com.example.lv1.fragments.SummaryInfoFragment;
+import com.example.lv1.adapters.ViewPagerAdapter;
+import com.example.lv1.interfaces.PersonalInfoInterface;
+import com.example.lv1.interfaces.StudentInfoInterface;
+
+public class CreateNewRecordActivity extends AppCompatActivity implements PersonalInfoInterface, StudentInfoInterface {
 
     public static ViewPager viewPager;
 

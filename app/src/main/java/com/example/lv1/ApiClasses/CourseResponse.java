@@ -8,9 +8,13 @@ public class CourseResponse {
     ArrayList<Course> courses;
 
 
-    @NonNull
+    public ArrayList<Course> getAllCourses(){
+        return courses;
+    }
+
+    /*@NonNull
     @Override
     public String toString() {
         return courses.toString();
-    }
+    }*/
 }
